@@ -4,7 +4,7 @@ function getProductDetails() {
         '.product-intro__title-text'
     );
     const productPriceElement = document.querySelector(
-        'div.price__value.text-tertiary-10[data-test="product-main-price"]'
+        '.price__value[data-test="product-main-price"]'
     );
 
     let lowestPrice30Days = null;
