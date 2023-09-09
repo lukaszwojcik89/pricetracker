@@ -1,0 +1,17 @@
+{
+  "author": "lukaszw",
+  "description": "Simple pricetracker for popular store",
+  "keywords": [
+    "firefox",
+    "price",
+    "tracker",
+    "rtv"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "pricetracker",
+  "scripts": {
+    "test": "jest"
+  },
+  "version": "0.1.0"
+}

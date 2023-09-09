@@ -1,0 +1,35 @@
+{
+    "action": {
+        "default_icon": {
+            "128": "images/icon128.png",
+            "16": "images/icon16.png",
+            "48": "images/icon48.png"
+        },
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "content-script.js"
+            ],
+            "matches": [
+                "https://www.euro.com.pl/*"
+            ]
+        }
+    ],
+    "description": "Tracks price changes on euro.com.pl",
+    "icons": {
+        "128": "images/icon48.png",
+        "16": "images/icon18.png",
+        "48": "images/icon36.png"
+    },
+    "manifest_version": 3,
+    "name": "Price Tracker",
+    "permissions": [
+        "activeTab"
+    ],
+    "version": "1.0"
+}
