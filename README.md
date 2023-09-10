@@ -5,7 +5,7 @@
 
 ## Opis Projektu
 
-**PriceTracker** to rozszerzenie przeglądarki, które umożliwia śledzenie cen produktów na różnych stronach internetowych. Projekt ten jest skierowany do użytkowników poszukujących najlepszych ofert i chcących monitorować zmiany cen produktów w czasie rzeczywistym. Rozszerzenie pozwala użytkownikom być na bieżąco z cenami produktów, zapisywać interesujące oferty oraz porównywać historię cen.
+**PriceTracker** to rozszerzenie przeglądarki, które umożliwia śledzenie cen produktów na różnych stronach internetowych. Projekt ten jest skierowany do użytkowników poszukujących najlepszych ofert i chcących monitorować zmiany cen produktów w czasie rzeczywistym. Rozszerzenie pozwala użytkownikom być na bieżąco z cenami produktów oraz zapisywać interesujące oferty.
 
 ## Główne Funkcje
 
@@ -69,7 +69,7 @@ Ten projekt jest udostępniany na licencji MIT. Szczegóły licencji można znal
 
 ## Project Description
 
-**PriceTracker** is a browser extension that allows users to *track product prices* on various websites. This project is aimed at users looking for the best deals and wanting to monitor changes in product prices in real-time. The extension enables users to stay updated with product prices, *save* interesting offers, and *compare* price history.
+**PriceTracker** is a browser extension that allows users to *track product prices* on various websites. This project is aimed at users looking for the best deals and wanting to monitor changes in product prices in real-time. The extension enables users to stay updated with product prices and *save* interesting offers.
 
 ## Key Features
 
