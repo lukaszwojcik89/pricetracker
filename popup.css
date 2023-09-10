@@ -100,6 +100,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: 10px 0;
+    table-layout: fixed; /* Dodane, aby utrzymać szerokość kolumn w ryzach */
 }
 
 table,
@@ -112,8 +113,32 @@ th,
 td {
     padding: 8px;
     text-align: left;
+    word-wrap: break-word; /* Dodane, aby zapobiec przepełnieniu tekstu */
+}
+th:nth-of-type(1) {
+    width: 40%; /* Szerokość kolumny "Nazwa produktu" */
 }
 
+th:nth-of-type(2),
+th:nth-of-type(3),
+th:nth-of-type(4),
+th:nth-of-type(5),
+th:nth-of-type(6) {
+    width: 12%; /* Szerokość pozostałych kolumn */
+}
+
+thead {
+    background-color: #e9ecef;
+}
+
+thead th {
+    font-weight: 600;
+    color: #555;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f8f9fa;
+}
 thead {
     background-color: #e9ecef;
 }

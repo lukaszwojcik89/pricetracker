@@ -35,7 +35,12 @@ function getProductDetails() {
         ? productPriceElement.textContent
         : null;
 
-    return { productName, productPrice, lowestPrice30Days, priceWithoutCode };
+    return {
+        productName,
+        productPrice,
+        lowestPrice30Days,
+        priceWithoutCode,
+    };
 }
 
 chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
@@ -43,6 +48,12 @@ chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
         console.log('Track price action triggered');
         const details = getProductDetails();
         console.log('Product Details:', details);
-        sendResponse(details);
+        sendResponse({
+            productName: details.productName,
+            productPrice: details.productPrice,
+            lowestPrice30Days: details.lowestPrice30Days,
+            priceWithoutCode: details.priceWithoutCode,
+            productURL: window.location.href,
+        });
     }
 });

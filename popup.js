@@ -108,7 +108,14 @@ function addProductToTable(productData, index) {
         priceWithoutCodeCell.textContent = '-';
     }
 
-    const deleteCell = row.insertCell(4);
+    const urlCell = row.insertCell(4); // Nowa komórka dla URL
+    const link = document.createElement('a'); // Stworzenie elementu <a> (link)
+    link.href = productData.productURL; // Ustawienie href na URL produktu
+    link.textContent = 'Link'; // Tekst do wyświetlenia
+    link.target = '_blank'; // Otwarcie linku w nowej karcie
+    urlCell.appendChild(link); // Dodanie linku do komórki
+
+    const deleteCell = row.insertCell(5);
     deleteCell.style.textAlign = 'center';
     deleteCell.style.padding = '0';
     const deleteIcon = document.createElement('img');
