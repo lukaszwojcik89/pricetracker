@@ -72,11 +72,17 @@ saveProductButton.addEventListener('click', () => {
                 return;
             }
 
+            if (savedProducts.length >= 6) {
+                alert(
+                    'Możesz dodać maksymalnie 6 produktów. Usuń jakiś produkt, aby dodać nowy.'
+                );
+                return;
+            }
+
             savedProducts.push(currentProductDetails);
 
             chrome.storage.local.set({ savedProducts }, () => {
                 console.log('Produkt został zapisany.');
-
                 addProductToTable(currentProductDetails);
             });
         });
@@ -118,28 +124,57 @@ function addProductToTable(productData, index) {
     const deleteCell = row.insertCell(5);
     deleteCell.style.textAlign = 'center';
     deleteCell.style.padding = '0';
+
     const deleteIcon = document.createElement('img');
     deleteIcon.classList.add('delete-icon');
     deleteIcon.alt = 'Usuń produkt';
     deleteIcon.style.cursor = 'pointer';
     deleteIcon.style.width = '16px';
-    deleteIcon.src = getIconSrc();
+    deleteIcon.src = getIconSrc('delete');
     deleteIcon.addEventListener('click', () =>
         removeProductFromTable(row.rowIndex)
     );
     deleteCell.appendChild(deleteIcon);
+
+    const refreshIcon = document.createElement('img');
+    refreshIcon.classList.add('refresh-icon');
+    refreshIcon.alt = 'Odśwież cenę';
+    refreshIcon.style.cursor = 'pointer';
+    refreshIcon.style.width = '16px';
+    refreshIcon.style.marginLeft = '10px'; // Add some margin between the icons
+    refreshIcon.src = getIconSrc('refresh'); // Use the updated function to get the correct icon source
+    refreshIcon.addEventListener('click', () => refreshProductData(product));
+    deleteCell.appendChild(refreshIcon); // Add the icon to the same cell as the delete icon
 }
-function getIconSrc() {
-    return document.body.classList.contains('dark-mode')
-        ? 'images/trash-icon-inv.png'
-        : 'images/trash-icon.png';
+function getIconSrc(iconType) {
+    let iconPath;
+
+    if (iconType === 'delete') {
+        iconPath = document.body.classList.contains('dark-mode')
+            ? 'images/trash-icon-inv.png'
+            : 'images/trash-icon.png';
+    } else if (iconType === 'refresh') {
+        iconPath = document.body.classList.contains('dark-mode')
+            ? 'images/refresh-double.256x256-inverted.png'
+            : 'images/refresh-double.256x256.png';
+    }
+    return iconPath;
 }
-function updateDeleteIcons() {
+function updateIcons() {
     const deleteIcons = document.querySelectorAll('.delete-icon');
     deleteIcons.forEach(icon => {
-        icon.src = getIconSrc();
+        icon.src = getIconSrc('delete');
+    });
+
+    const refreshIcons = document.querySelectorAll('.refresh-icon');
+    refreshIcons.forEach(icon => {
+        icon.src = getIconSrc('refresh');
     });
 }
+document.getElementById('dark-mode-switch').addEventListener('change', () => {
+    document.body.classList.toggle('dark-mode');
+    updateIcons();
+});
 
 document.addEventListener('DOMContentLoaded', event => {
     fetchCurrentProductDetails();
@@ -209,3 +244,13 @@ document.getElementById('dark-mode-switch').addEventListener('change', e => {
     document.body.classList.toggle('dark-mode', e.target.checked);
     updateDeleteIcons(); // Aktualizacja ikony po przełączeniu trybu
 });
+
+function refreshAllProducts() {
+    const productRows = document.querySelectorAll(
+        '#saved-products-table tbody tr'
+    );
+    productRows.forEach((row, index) => {});
+}
+document
+    .getElementById('refresh-all')
+    .addEventListener('click', refreshAllProducts);
