@@ -1,0 +1,78 @@
+{
+    "all_products_deleted": {
+        "description": "Notification message when all products are deleted",
+        "message": "All products have been deleted"
+    },
+    "confirm_delete_all_products": {
+        "description": "Confirmation message to delete all products",
+        "message": "Do you confirm the removal of all products from the list?"
+    },
+    "delete_product": {
+        "description": "Tooltip for delete product icon",
+        "message": "Delete product"
+    },
+    "lowest_price_in_30_days": {
+        "description": "Label for the lowest price in the last 30 days",
+        "message": "Lowest price in 30 days:"
+    },
+    "max_six_products": {
+        "description": "Error message when trying to add more than six products",
+        "message": "You can add up to 6 products. Remove a product to add a new one."
+    },
+    "no_data_in_response": {
+        "description": "Error message when no data is received in the response",
+        "message": "No data received in response"
+    },
+    "no_product_details_to_save": {
+        "description": "Error message when there are no product details to save",
+        "message": "No product details available to save"
+    },
+    "popup_js_loaded": {
+        "description": "Notification that popup.js loaded",
+        "message": "popup.js loaded"
+    },
+    "price_without_code": {
+        "description": "Label for the price without a discount code",
+        "message": "Price without code:"
+    },
+    "product_already_on_list": {
+        "description": "Error message when the product is already on the list",
+        "message": "The selected product is already on the list"
+    },
+    "product_deleted": {
+        "description": "Notification message when a product is deleted",
+        "message": "Product has been deleted"
+    },
+    "product_details": {
+        "description": "Label for product details",
+        "message": "Product details:"
+    },
+    "product_name": {
+        "description": "Label for product name",
+        "message": "Product name:"
+    },
+    "product_price": {
+        "description": "Label for product price",
+        "message": "Product price:"
+    },
+    "product_saved": {
+        "description": "Notification message when a product is saved",
+        "message": "Product has been saved"
+    },
+    "refresh_price": {
+        "description": "Tooltip for refresh price icon",
+        "message": "Refresh price"
+    },
+    "response_received": {
+        "description": "Prefix for the message indicating a response was received",
+        "message": "Response received:"
+    },
+    "track_price_action_triggered": {
+        "description": "Notification message when the track price action is triggered",
+        "message": "Track price action triggered"
+    },
+    "trackPrice_action": {
+        "description": "Action command for tracking the price",
+        "message": "trackPrice"
+    }
+}

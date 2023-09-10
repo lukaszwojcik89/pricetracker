@@ -1,0 +1,78 @@
+{
+    "all_products_deleted": {
+        "description": "Benachrichtigungsnachricht, wenn alle Produkte gelöscht werden",
+        "message": "Alle Produkte wurden gelöscht"
+    },
+    "confirm_delete_all_products": {
+        "description": "Bestätigungsnachricht zum Löschen aller Produkte",
+        "message": "Bestätigen Sie die Entfernung aller Produkte aus der Liste?"
+    },
+    "delete_product": {
+        "description": "Tooltip für das Löschen des Produkt-Symbols",
+        "message": "Produkt löschen"
+    },
+    "lowest_price_in_30_days": {
+        "description": "Etikett für den niedrigsten Preis in den letzten 30 Tagen",
+        "message": "Niedrigster Preis in 30 Tagen:"
+    },
+    "max_six_products": {
+        "description": "Fehlermeldung beim Versuch, mehr als sechs Produkte hinzuzufügen",
+        "message": "Sie können bis zu 6 Produkte hinzufügen. Entfernen Sie ein Produkt, um ein neues hinzuzufügen."
+    },
+    "no_data_in_response": {
+        "description": "Fehlermeldung, wenn keine Daten in der Antwort empfangen werden",
+        "message": "Keine Daten in der Antwort empfangen"
+    },
+    "no_product_details_to_save": {
+        "description": "Fehlermeldung, wenn keine Produktdetails zum Speichern vorhanden sind",
+        "message": "Keine Produktdetails zum Speichern verfügbar"
+    },
+    "popup_js_loaded": {
+        "description": "Benachrichtigung, dass popup.js geladen wurde",
+        "message": "popup.js geladen"
+    },
+    "price_without_code": {
+        "description": "Etikett für den Preis ohne Rabattcode",
+        "message": "Preis ohne Code:"
+    },
+    "product_already_on_list": {
+        "description": "Fehlermeldung, wenn das Produkt bereits auf der Liste steht",
+        "message": "Das ausgewählte Produkt befindet sich bereits auf der Liste"
+    },
+    "product_deleted": {
+        "description": "Benachrichtigungsnachricht, wenn ein Produkt gelöscht wird",
+        "message": "Produkt wurde gelöscht"
+    },
+    "product_details": {
+        "description": "Etikett für Produktdetails",
+        "message": "Produktdetails:"
+    },
+    "product_name": {
+        "description": "Etikett für den Produktnamen",
+        "message": "Produktname:"
+    },
+    "product_price": {
+        "description": "Etikett für den Produktpreis",
+        "message": "Produktpreis:"
+    },
+    "product_saved": {
+        "description": "Benachrichtigungsnachricht, wenn ein Produkt gespeichert wird",
+        "message": "Produkt wurde gespeichert"
+    },
+    "refresh_price": {
+        "description": "Tooltip für das Aktualisieren des Preis-Symbols",
+        "message": "Preis aktualisieren"
+    },
+    "response_received": {
+        "description": "Präfix für die Nachricht, dass eine Antwort erhalten wurde",
+        "message": "Antwort erhalten:"
+    },
+    "track_price_action_triggered": {
+        "description": "Benachrichtigungsnachricht, wenn die Aktion zur Preisverfolgung ausgelöst wird",
+        "message": "Aktion zur Preisverfolgung ausgelöst"
+    },
+    "trackPrice_action": {
+        "description": "Aktionsbefehl zur Preisverfolgung",
+        "message": "Preisverfolgung"
+    }
+}

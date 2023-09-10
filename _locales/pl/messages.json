@@ -1,0 +1,78 @@
+{
+    "all_products_deleted": {
+        "description": "Komunikat o powiadomieniu, gdy wszystkie produkty zostaną usunięte",
+        "message": "Wszystkie produkty zostały usunięte"
+    },
+    "confirm_delete_all_products": {
+        "description": "Komunikat potwierdzający usunięcie wszystkich produktów",
+        "message": "Czy potwierdzasz usunięcie wszystkich produktów z listy?"
+    },
+    "delete_product": {
+        "description": "Podpowiedź dla ikony usuwania produktu",
+        "message": "Usuń produkt"
+    },
+    "lowest_price_in_30_days": {
+        "description": "Etykieta dla najniższej ceny w ostatnich 30 dniach",
+        "message": "Najniższa cena w 30 dniach:"
+    },
+    "max_six_products": {
+        "description": "Komunikat o błędzie podczas próby dodania więcej niż sześciu produktów",
+        "message": "Możesz dodać do 6 produktów. Usuń produkt, aby dodać nowy."
+    },
+    "no_data_in_response": {
+        "description": "Komunikat o błędzie, gdy nie otrzyma się danych w odpowiedzi",
+        "message": "Brak danych w odpowiedzi"
+    },
+    "no_product_details_to_save": {
+        "description": "Komunikat o błędzie, gdy brak szczegółów produktu do zapisania",
+        "message": "Brak szczegółów produktu do zapisania"
+    },
+    "popup_js_loaded": {
+        "description": "Komunikat o powiadomieniu, że załadowano popup.js",
+        "message": "popup.js załadowany"
+    },
+    "price_without_code": {
+        "description": "Etykieta dla ceny bez kodu zniżkowego",
+        "message": "Cena bez kodu:"
+    },
+    "product_already_on_list": {
+        "description": "Komunikat o błędzie, gdy produkt jest już na liście",
+        "message": "Wybrany produkt jest już na liście"
+    },
+    "product_deleted": {
+        "description": "Komunikat o powiadomieniu, gdy produkt zostanie usunięty",
+        "message": "Produkt został usunięty"
+    },
+    "product_details": {
+        "description": "Etykieta dla szczegółów produktu",
+        "message": "Szczegóły produktu:"
+    },
+    "product_name": {
+        "description": "Etykieta dla nazwy produktu",
+        "message": "Nazwa produktu:"
+    },
+    "product_price": {
+        "description": "Etykieta dla ceny produktu",
+        "message": "Cena produktu:"
+    },
+    "product_saved": {
+        "description": "Komunikat o powiadomieniu, gdy produkt zostanie zapisany",
+        "message": "Produkt został zapisany"
+    },
+    "refresh_price": {
+        "description": "Podpowiedź dla ikony odświeżania ceny",
+        "message": "Odśwież cenę"
+    },
+    "response_received": {
+        "description": "Prefiks dla wiadomości wskazującej, że otrzymano odpowiedź",
+        "message": "Otrzymano odpowiedź:"
+    },
+    "track_price_action_triggered": {
+        "description": "Komunikat o powiadomieniu, gdy zostanie uruchomiona akcja śledzenia ceny",
+        "message": "Uruchomiono akcję śledzenia ceny"
+    },
+    "trackPrice_action": {
+        "description": "Polecenie akcji do śledzenia ceny",
+        "message": "Śledź cenę"
+    }
+}

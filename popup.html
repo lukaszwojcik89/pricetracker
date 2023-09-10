@@ -16,9 +16,15 @@
             <p id="price-without-code">Cena bez kodu:</p>
         </div>
         <div class="button-group">
-            <button id="track-price">Śledź cenę</button>
-            <button id="save-product">Zapisz produkt</button>
-            <button id="clear-list">Wyczyść listę</button>
+            <button class="action-button" id="track-price">Śledź cenę</button>
+            <button class="action-button" id="save-product">
+                Zapisz produkt
+            </button>
+            <button class="action-button" id="clear-list">Wyczyść listę</button>
+            <button class="action-button" id="refresh-all">
+                Odśwież wszystkie
+            </button>
+
             <div class="dark-mode-toggle">
                 <label for="dark-mode-switch">
                     <input type="checkbox" id="dark-mode-switch" />
@@ -33,6 +39,7 @@
                     <th>Cena produktu</th>
                     <th>Najniższa cena (30 dni)</th>
                     <th>Cena bez kodu</th>
+                    <th>Link do produktu</th>
                     <th>Akcje</th>
                 </tr>
             </thead>

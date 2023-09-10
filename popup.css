@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 10px;
     background-color: #f4f5f7;
-    width: 350px;
+    width: 470px;
 }
 
 #product-details {
@@ -31,10 +31,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
-.button-group button {
+/* .button-group button {
     flex-grow: 1;
     padding: 12px;
     font-size: 1em;
@@ -42,10 +42,12 @@ body {
     border: none;
     color: whitesmoke;
     cursor: pointer;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-    margin: 0 4px;
-}
+    border-radius: 5px;
+    text-align: center; /* wyśrodkowanie tekstu horyzontalnie */
+    /* line-height: 40px; wyśrodkowanie tekstu wertykalnie */
+    /* transition: background-color 0.3s ease; */
+    /* margin: 0 4px; */
+/* } */
 
 .button-group button:hover {
     background-color: #53a2be;
@@ -100,6 +102,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: 10px 0;
+    table-layout: fixed;
 }
 
 table,
@@ -110,10 +113,46 @@ td {
 
 th,
 td {
+    border: 2px solid #e0e0e0;
     padding: 8px;
     text-align: left;
+    word-wrap: break-word; /* Dodane, aby zapobiec przepełnieniu tekstu */
+    white-space: pre-line; /* Dodane, aby zachować formatowanie tekstu */
+}
+th:nth-of-type(1) {
+    width: 30%;
+    max-width: 35%;
+    white-space: pre-line;
 }
 
+th:nth-of-type(2),
+th:nth-of-type(3),
+th:nth-of-type(4),
+th:nth-of-type(5) {
+    width: auto;
+    max-width: 35%; /* Procent może być dostosowany */
+    white-space: pre-line;
+}
+th:nth-of-type(6) {
+    width: auto;
+    max-width: 5%;
+    white-space: pre-line;
+}
+thead {
+    background-color: #e9ecef;
+}
+
+thead th {
+    font-weight: 600;
+    color: #555;
+    line-height: 1.2em; /* Ustaw wysokość linii */
+    max-height: 2.4em; /* Ustaw maksymalną wysokość (2 linie) */
+    white-space: pre-line;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f8f9fa;
+}
 thead {
     background-color: #e9ecef;
 }
@@ -227,4 +266,32 @@ body.dark-mode tbody tr:nth-child(odd) {
 }
 body.dark-mode .button-group .delete-icon img {
     filter: invert(1);
+}
+body.dark-mode a {
+    color: #a8dadc; /* Jasny niebieski kolor dla linków w trybie ciemnym */
+}
+.action-button {
+    width: 100px; /* stała szerokość */
+    height: 40px; /* stała wysokość */
+}
+.action-button {
+    width: 100px; /* stała szerokość */
+    height: 40px; /* stała wysokość */
+    margin: 0 5px; /* mniejsze marginesy między przyciskami */
+    padding: 0; /* usunięcie wewnętrznego marginesu */
+    border-radius: 5px; /* mniejsze zaokrąglenia */
+    text-align: center; /* wyśrodkowanie tekstu horyzontalnie */
+    line-height: 40px; /* wyśrodkowanie tekstu wertykalnie */
+    background-color: #176087;
+    border: none;
+    color: whitesmoke;
+    cursor: pointer;
+    box-sizing: border-box; /* dodane, aby padding nie wpłynął na wymiary */
+    transition: background-color 0.3s ease;
+}
+.action-button:hover {
+    background-color: #53a2be;
+}
+.action-button:active {
+    background-color: #176087;
 }
