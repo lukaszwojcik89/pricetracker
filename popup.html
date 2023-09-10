@@ -8,13 +8,37 @@
     </head>
     <body>
         <div id="product-details">
-            <h1 id="product-name">Nazwa produktu: </h1>
-            <p id="product-price">Cena produktu: </p>
-            <p id="lowest-price-30-days">Najniższa cena z 30 dni przed obniżką:</p>
-            <p id="price-without-code">Cena bez kodu: </p>
+            <h1 id="product-name">Nazwa produktu:</h1>
+            <p id="product-price">Cena produktu:</p>
+            <p id="lowest-price-30-days">
+                Najniższa cena z 30 dni przed obniżką ss:
+            </p>
+            <p id="price-without-code">Cena bez kodu:</p>
         </div>
-        <button id="track-price">Śledź cenę</button>
-        <button id="save-product">Zapisz produkt</button>
+        <div class="button-group">
+            <button id="track-price">Śledź cenę</button>
+            <button id="save-product">Zapisz produkt</button>
+            <button id="clear-list">Wyczyść listę</button>
+            <div class="dark-mode-toggle">
+                <label for="dark-mode-switch">
+                    <input type="checkbox" id="dark-mode-switch" />
+                </label>
+            </div>
+        </div>
+
+        <table id="saved-products-table">
+            <thead>
+                <tr>
+                    <th>Nazwa produktu</th>
+                    <th>Cena produktu</th>
+                    <th>Najniższa cena (30 dni)</th>
+                    <th>Cena bez kodu</th>
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
         <script src="popup.js"></script>
     </body>
 </html>

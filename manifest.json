@@ -29,7 +29,8 @@
     "manifest_version": 3,
     "name": "Price Tracker",
     "permissions": [
-        "activeTab"
+        "activeTab",
+        "storage"
     ],
     "version": "1.0"
 }
