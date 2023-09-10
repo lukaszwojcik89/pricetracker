@@ -29,7 +29,18 @@
     "manifest_version": 3,
     "name": "Price Tracker",
     "permissions": [
-        "activeTab"
+        "activeTab",
+        "storage"
     ],
-    "version": "1.0"
+    "version": "1.0",
+    "web_accessible_resources": [
+        {
+            "matches": [
+                "https://www.euro.com.pl/*"
+            ],
+            "resources": [
+                "images/*"
+            ]
+        }
+    ]
 }

@@ -15,7 +15,8 @@ function getProductDetails() {
     );
 
     if (lowestPrice30DaysElement) {
-        lowestPrice30Days = lowestPrice30DaysElement.textContent.trim();
+        const textContent = lowestPrice30DaysElement.textContent.trim();
+        lowestPrice30Days = textContent.split(': ')[1];
     }
 
     const priceWithoutCodeElement = document.querySelector(
@@ -23,7 +24,8 @@ function getProductDetails() {
     );
 
     if (priceWithoutCodeElement) {
-        priceWithoutCode = priceWithoutCodeElement.textContent.trim();
+        const textContent = priceWithoutCodeElement.textContent.trim();
+        priceWithoutCode = textContent.split(': ')[1];
     }
 
     const productName = productNameElement

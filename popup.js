@@ -1,5 +1,8 @@
 // @ts-nocheck
 console.log('popup.js loaded');
+
+let currentProductDetails = null;
+
 document.getElementById('track-price').addEventListener('click', () => {
     chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
         let currentTab = tabs[0];
@@ -7,14 +10,17 @@ document.getElementById('track-price').addEventListener('click', () => {
             currentTab.id,
             { action: 'trackPrice' },
             response => {
-                console.log('Product Details:', response);
-                updatePopupUI(response); // Wywołujemy funkcję do aktualizacji interfejsu użytkownika
+                console.log('Response received:', response);
+                if (response) {
+                    updatePopupUI(response);
+                } else {
+                    console.error('No data received in response');
+                }
             }
         );
     });
 });
 
-// Funkcja do aktualizacji interfejsu użytkownika w popupie
 function updatePopupUI(data) {
     const productNameElement = document.getElementById('product-name');
     const productPriceElement = document.getElementById('product-price');
@@ -24,67 +30,175 @@ function updatePopupUI(data) {
     const priceWithoutCodeElement =
         document.getElementById('price-without-code');
 
-    if (data.productName) {
+    if (data && data.productName) {
         productNameElement.textContent = `Nazwa produktu: ${data.productName}`;
     }
 
-    if (data.productPrice) {
+    if (data && data.productPrice) {
         productPriceElement.textContent = `Cena produktu: ${data.productPrice}`;
     }
 
-    if (data.lowestPrice30Days) {
-        lowestPrice30DaysElement.textContent = `${data.lowestPrice30Days}`;
+    if (data && data.lowestPrice30Days) {
+        lowestPrice30DaysElement.textContent = `Najniższa cena z 30 dni przed obniżką: ${data.lowestPrice30Days}`;
     } else {
         lowestPrice30DaysElement.textContent = '';
     }
 
-    if (data.priceWithoutCode) {
-        priceWithoutCodeElement.textContent = `${data.priceWithoutCode}`;
+    if (data && data.priceWithoutCode) {
+        priceWithoutCodeElement.textContent = `Cena bez kodu: ${data.priceWithoutCode}`;
     } else {
         priceWithoutCodeElement.textContent = '';
     }
+
+    currentProductDetails = data;
 }
-// Pobierz przycisk "Zapisz produkt"
+
 const saveProductButton = document.getElementById('save-product');
 
-// Pobierz tabelę, do której chcesz dodać zapisane produkty
 const savedProductsTable = document.getElementById('saved-products-table');
 
-// Dodaj obsługę kliknięcia
 saveProductButton.addEventListener('click', () => {
-    // Pobierz dane produktu z popupu (załóżmy, że są przechowywane w zmiennej 'productData')
-    const productData = {
-        productName: 'Nazwa produktu',
-        productPrice: 'Cena produktu',
-        // Dodaj inne pola produktu
-    };
+    if (currentProductDetails) {
+        chrome.storage.local.get({ savedProducts: [] }, result => {
+            const savedProducts = result.savedProducts;
+            if (
+                savedProducts.some(
+                    product =>
+                        product.productName ===
+                        currentProductDetails.productName
+                )
+            ) {
+                alert('Wybrany produkt znajduje się już na liście');
+                return;
+            }
 
-    // Zapisz dane produktu w pamięci lokalnej
-    chrome.storage.local.get({ savedProducts: [] }, (result) => {
+            savedProducts.push(currentProductDetails);
+
+            chrome.storage.local.set({ savedProducts }, () => {
+                console.log('Produkt został zapisany.');
+
+                addProductToTable(currentProductDetails);
+            });
+        });
+    } else {
+        console.log('No product details available to save');
+    }
+});
+
+function addProductToTable(productData, index) {
+    const row = savedProductsTable.insertRow();
+
+    const nameCell = row.insertCell(0);
+    nameCell.textContent = productData.productName;
+
+    const priceCell = row.insertCell(1);
+    priceCell.textContent = productData.productPrice;
+
+    const lowestPriceCell = row.insertCell(2);
+    if (productData.lowestPrice30Days) {
+        lowestPriceCell.textContent = productData.lowestPrice30Days;
+    } else {
+        lowestPriceCell.textContent = '-';
+    }
+
+    const priceWithoutCodeCell = row.insertCell(3);
+    if (productData.priceWithoutCode) {
+        priceWithoutCodeCell.textContent = productData.priceWithoutCode;
+    } else {
+        priceWithoutCodeCell.textContent = '-';
+    }
+
+    const deleteCell = row.insertCell(4);
+    deleteCell.style.textAlign = 'center';
+    deleteCell.style.padding = '0';
+    const deleteIcon = document.createElement('img');
+    deleteIcon.classList.add('delete-icon');
+    deleteIcon.alt = 'Usuń produkt';
+    deleteIcon.style.cursor = 'pointer';
+    deleteIcon.style.width = '16px';
+    deleteIcon.src = getIconSrc();
+    deleteIcon.addEventListener('click', () =>
+        removeProductFromTable(row.rowIndex)
+    );
+    deleteCell.appendChild(deleteIcon);
+}
+function getIconSrc() {
+    return document.body.classList.contains('dark-mode')
+        ? 'images/trash-icon-inv.png'
+        : 'images/trash-icon.png';
+}
+function updateDeleteIcons() {
+    const deleteIcons = document.querySelectorAll('.delete-icon');
+    deleteIcons.forEach(icon => {
+        icon.src = getIconSrc();
+    });
+}
+
+document.addEventListener('DOMContentLoaded', event => {
+    fetchCurrentProductDetails();
+});
+
+function fetchCurrentProductDetails() {
+    chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+        let currentTab = tabs[0];
+        chrome.tabs.sendMessage(
+            currentTab.id,
+            { action: 'trackPrice' },
+            response => {
+                console.log('Response received:', response);
+                if (response) {
+                    updatePopupUI(response);
+                } else {
+                    console.error('No data received in response');
+                }
+            }
+        );
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadSavedProducts();
+});
+
+function loadSavedProducts() {
+    chrome.storage.local.get({ savedProducts: [] }, result => {
         const savedProducts = result.savedProducts;
-        savedProducts.push(productData);
-
-        // Aktualizuj dane w pamięci lokalnej
-        chrome.storage.local.set({ savedProducts }, () => {
-            console.log('Produkt został zapisany.');
-
-            // Dodaj pozycję do tabeli
+        savedProducts.forEach(productData => {
             addProductToTable(productData);
         });
     });
+}
+
+function removeProductFromTable(index) {
+    chrome.storage.local.get({ savedProducts: [] }, result => {
+        const savedProducts = result.savedProducts;
+        savedProducts.splice(index - 1, 1);
+
+        chrome.storage.local.set({ savedProducts }, () => {
+            console.log('Produkt został usunięty.');
+        });
+    });
+
+    savedProductsTable.deleteRow(index);
+}
+const clearListButton = document.getElementById('clear-list');
+
+clearListButton.addEventListener('click', () => {
+    const confirmation = confirm(
+        'Czy potwierdzasz usunięcie wszystkich produktów z listy?'
+    );
+    if (confirmation) {
+        chrome.storage.local.set({ savedProducts: [] }, () => {
+            console.log('Wszystkie produkty zostały usunięte.');
+            const rows = savedProductsTable.getElementsByTagName('tr');
+            while (rows.length > 1) {
+                savedProductsTable.deleteRow(1);
+            }
+        });
+    }
 });
 
-// Funkcja dodająca pozycję do tabeli
-function addProductToTable(productData) {
-    // Tworzenie nowego wiersza w tabeli
-    const row = savedProductsTable.insertRow();
-    
-    // Dodawanie komórki z nazwą produktu (skrócona)
-    const nameCell = row.insertCell(0);
-    const shortProductName = productData.productName.substring(0, 2);
-    nameCell.textContent = shortProductName;
-
-    // Dodawanie komórki z ceną produktu
-    const priceCell = row.insertCell(1);
-    priceCell.textContent = productData.productPrice;
-}
+document.getElementById('dark-mode-switch').addEventListener('change', e => {
+    document.body.classList.toggle('dark-mode', e.target.checked);
+    updateDeleteIcons(); // Aktualizacja ikony po przełączeniu trybu
+});
