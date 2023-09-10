@@ -109,14 +109,34 @@ function addProductToTable(productData, index) {
     }
 
     const deleteCell = row.insertCell(4);
-    const deleteIcon = document.createElement('span');
-    deleteIcon.textContent = '🗑️';
+    deleteCell.style.textAlign = 'center';
+    deleteCell.style.padding = '0';
+    const deleteIcon = document.createElement('img');
+    deleteIcon.classList.add('delete-icon');
+    deleteIcon.alt = 'Usuń produkt';
     deleteIcon.style.cursor = 'pointer';
+    deleteIcon.style.width = '16px';
+    deleteIcon.src = getIconSrc();
     deleteIcon.addEventListener('click', () =>
         removeProductFromTable(row.rowIndex)
     );
     deleteCell.appendChild(deleteIcon);
 }
+function getIconSrc() {
+    return document.body.classList.contains('dark-mode')
+        ? 'images/trash-icon-inv.png'
+        : 'images/trash-icon.png';
+}
+function updateDeleteIcons() {
+    const deleteIcons = document.querySelectorAll('.delete-icon');
+    deleteIcons.forEach(icon => {
+        icon.src = getIconSrc();
+    });
+}
+
+document.addEventListener('DOMContentLoaded', event => {
+    fetchCurrentProductDetails();
+});
 
 function fetchCurrentProductDetails() {
     chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
@@ -135,10 +155,6 @@ function fetchCurrentProductDetails() {
         );
     });
 }
-
-document.addEventListener('DOMContentLoaded', event => {
-    fetchCurrentProductDetails();
-});
 
 document.addEventListener('DOMContentLoaded', () => {
     loadSavedProducts();
@@ -184,4 +200,5 @@ clearListButton.addEventListener('click', () => {
 
 document.getElementById('dark-mode-switch').addEventListener('change', e => {
     document.body.classList.toggle('dark-mode', e.target.checked);
+    updateDeleteIcons(); // Aktualizacja ikony po przełączeniu trybu
 });

@@ -36,19 +36,20 @@ body {
 
 .button-group button {
     flex-grow: 1;
-    padding: 15px;
+    padding: 12px;
     font-size: 1em;
-    background-color: #667eea;
+    background-color: #176087;
     border: none;
-    color: #ffffff;
+    color: whitesmoke;
     cursor: pointer;
-    border-radius: 12px;
+    border-radius: 10px;
     transition: background-color 0.3s ease;
-    margin: 0 10px;
+    margin: 0 4px;
 }
 
 .button-group button:hover {
-    background-color: #5a6fda;
+    background-color: #53a2be;
+    color: whitesmoke;
 }
 
 .dark-mode-toggle {
@@ -78,7 +79,7 @@ body {
 }
 
 .dark-mode-toggle input:before {
-    content: '🌞';
+    content: url('icons/day-sunny-icon.png');
     position: absolute;
     width: 24px;
     height: 24px;
@@ -93,7 +94,7 @@ body {
 
 .dark-mode-toggle input:checked:before {
     transform: translateX(26px);
-    content: '🌜';
+    content: url('icons/moon-line-icon.png');
 }
 table {
     width: 100%;
@@ -104,7 +105,7 @@ table {
 table,
 th,
 td {
-    border: 1px solid #e0e0e0;
+    border: 2px solid #e0e0e0;
 }
 
 th,
@@ -160,7 +161,7 @@ tbody tr:nth-child(odd) {
 }
 
 .switch label::after {
-    content: '🌞';
+    content: url('icons/day-sunny-icon.png');
     position: absolute;
     top: 4px;
     left: 4px;
@@ -179,7 +180,7 @@ tbody tr:nth-child(odd) {
 }
 
 .switch input:checked + label::after {
-    content: '🌜';
+    content: url('icons/moon-line-icon.png');
     transform: translateX(26px);
 }
 
@@ -199,11 +200,12 @@ body.dark-mode #product-details p {
 }
 
 body.dark-mode .button-group button {
-    background-color: #444;
+    background-color: #132e32;
 }
 
 body.dark-mode .button-group button:hover {
-    background-color: #3f1a74;
+    background-color: #53a2be;
+    color: whitesmoke;
 }
 
 body.dark-mode table,
@@ -222,4 +224,7 @@ body.dark-mode thead th {
 
 body.dark-mode tbody tr:nth-child(odd) {
     background-color: #333;
+}
+body.dark-mode .button-group .delete-icon img {
+    filter: invert(1);
 }
