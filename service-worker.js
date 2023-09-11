@@ -12,8 +12,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         fetchProductDetails(request.productURL).then(details => {
             sendResponse(details);
         });
-        return true; // indicates that the response is sent asynchronously
-    }
+        return true;
 });
 
 async function fetchProductDetails(url) {
