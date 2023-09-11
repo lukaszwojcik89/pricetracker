@@ -187,7 +187,7 @@ function refreshProductData(productData) {
         }
     );
 }
-// Tutaj możesz dodać funkcję updateProductData, która aktualizuje dane w pamięci lokalnej i UI.
+
 function updateProductData(oldProductData, newProductData) {
     chrome.storage.local.get({ savedProducts: [] }, result => {
         const savedProducts = result.savedProducts;
