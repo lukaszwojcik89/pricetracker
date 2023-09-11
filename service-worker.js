@@ -13,6 +13,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             sendResponse(details);
         });
         return true;
+    }
 });
 
 async function fetchProductDetails(url) {
