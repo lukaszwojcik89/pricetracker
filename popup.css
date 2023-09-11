@@ -34,21 +34,6 @@ body {
     margin-bottom: 16px;
 }
 
-/* .button-group button {
-    flex-grow: 1;
-    padding: 12px;
-    font-size: 1em;
-    background-color: #176087;
-    border: none;
-    color: whitesmoke;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align: center; /* wyśrodkowanie tekstu horyzontalnie */
-/* line-height: 40px; wyśrodkowanie tekstu wertykalnie */
-/* transition: background-color 0.3s ease; */
-/* margin: 0 4px; */
-/* } */
-
 .button-group button:hover {
     background-color: #53a2be;
     color: whitesmoke;
@@ -116,8 +101,8 @@ td {
     border: 2px solid #e0e0e0;
     padding: 8px;
     text-align: left;
-    word-wrap: break-word; /* Dodane, aby zapobiec przepełnieniu tekstu */
-    white-space: pre-line; /* Dodane, aby zachować formatowanie tekstu */
+    word-wrap: break-word;
+    white-space: pre-line;
 }
 th:nth-of-type(1) {
     width: 30%;
@@ -130,7 +115,7 @@ th:nth-of-type(3),
 th:nth-of-type(4),
 th:nth-of-type(5) {
     width: auto;
-    max-width: 35%; /* Procent może być dostosowany */
+    max-width: 35%;
     white-space: pre-line;
 }
 th:nth-of-type(6) {
@@ -145,8 +130,8 @@ thead {
 thead th {
     font-weight: 600;
     color: #555;
-    line-height: 1.2em; /* Ustaw wysokość linii */
-    max-height: 2.4em; /* Ustaw maksymalną wysokość (2 linie) */
+    line-height: 1.2em;
+    max-height: 2.4em;
     white-space: pre-line;
 }
 
@@ -271,8 +256,8 @@ body.dark-mode a {
     color: #a8dadc;
 }
 .action-button {
-    width: 100px;
-    height: 40px;
+    width: 100px; /* stała szerokość */
+    height: 40px; /* stała wysokość */
 }
 .action-button {
     width: 100px; /* stała szerokość */
@@ -286,7 +271,7 @@ body.dark-mode a {
     border: none;
     color: whitesmoke;
     cursor: pointer;
-    box-sizing: border-box; /* dodane, aby padding nie wpłynął na wymiary */
+    box-sizing: border-box;
     transition: background-color 0.3s ease;
 }
 .action-button:hover {
