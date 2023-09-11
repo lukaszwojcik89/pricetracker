@@ -1,7 +1,6 @@
 
-# PriceTracker
+# ![1694372304278](image/README/1694372304278.png) PriceTracker
 
-![1694372304278](image/README/1694372304278.png)
 
 ## Opis Projektu
 
@@ -63,9 +62,7 @@ Ten projekt jest udostępniany na licencji MIT. Szczegóły licencji można znal
 
 
 
-# PriceTracker
-
-![1694372344798](image/README/1694372344798.png)
+# ![1694372304278](image/README/1694372304278.png) PriceTracker
 
 ## Project Description
 
