@@ -44,9 +44,9 @@ body {
     cursor: pointer;
     border-radius: 5px;
     text-align: center; /* wyśrodkowanie tekstu horyzontalnie */
-    /* line-height: 40px; wyśrodkowanie tekstu wertykalnie */
-    /* transition: background-color 0.3s ease; */
-    /* margin: 0 4px; */
+/* line-height: 40px; wyśrodkowanie tekstu wertykalnie */
+/* transition: background-color 0.3s ease; */
+/* margin: 0 4px; */
 /* } */
 
 .button-group button:hover {
@@ -268,11 +268,11 @@ body.dark-mode .button-group .delete-icon img {
     filter: invert(1);
 }
 body.dark-mode a {
-    color: #a8dadc; /* Jasny niebieski kolor dla linków w trybie ciemnym */
+    color: #a8dadc;
 }
 .action-button {
-    width: 100px; /* stała szerokość */
-    height: 40px; /* stała wysokość */
+    width: 100px;
+    height: 40px;
 }
 .action-button {
     width: 100px; /* stała szerokość */
