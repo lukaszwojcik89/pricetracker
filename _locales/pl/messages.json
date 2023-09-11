@@ -1,7 +1,15 @@
 {
+    "actions_column": {
+        "description": "Nagłówek kolumny dla akcji",
+        "message": "Akcje"
+    },
     "all_products_deleted": {
         "description": "Komunikat o powiadomieniu, gdy wszystkie produkty zostaną usunięte",
         "message": "Wszystkie produkty zostały usunięte"
+    },
+    "clear_list_button": {
+        "description": "Tekst dla przycisku 'Wyczyść listę'",
+        "message": "Wyczyść listę"
     },
     "confirm_delete_all_products": {
         "description": "Komunikat potwierdzający usunięcie wszystkich produktów",
@@ -10,6 +18,14 @@
     "delete_product": {
         "description": "Podpowiedź dla ikony usuwania produktu",
         "message": "Usuń produkt"
+    },
+    "lowest_price_30_days_column": {
+        "description": "Nagłówek kolumny dla najniższej ceny w ciągu ostatnich 30 dni",
+        "message": "Najniższa cena (30 dni)"
+    },
+    "lowest_price_30_days_label": {
+        "description": "Etykieta dla najniższej ceny w ciągu ostatnich 30 dni",
+        "message": "Najniższa cena w 30 dni:"
     },
     "lowest_price_in_30_days": {
         "description": "Etykieta dla najniższej ceny w ostatnich 30 dniach",
@@ -35,6 +51,14 @@
         "description": "Etykieta dla ceny bez kodu zniżkowego",
         "message": "Cena bez kodu:"
     },
+    "price_without_code_column": {
+        "description": "Nagłówek kolumny dla ceny bez kodu zniżkowego",
+        "message": "Cena bez kodu"
+    },
+    "price_without_code_label": {
+        "description": "Etykieta dla ceny bez kodu zniżkowego",
+        "message": "Cena bez kodu:"
+    },
     "product_already_on_list": {
         "description": "Komunikat o błędzie, gdy produkt jest już na liście",
         "message": "Wybrany produkt jest już na liście"
@@ -47,7 +71,19 @@
         "description": "Etykieta dla szczegółów produktu",
         "message": "Szczegóły produktu:"
     },
+    "product_link_column": {
+        "description": "Nagłówek kolumny dla linku do produktu",
+        "message": "Link do produktu"
+    },
     "product_name": {
+        "description": "Etykieta dla nazwy produktu",
+        "message": "Nazwa produktu:"
+    },
+    "product_name_column": {
+        "description": "Nagłówek kolumny dla nazwy produktu",
+        "message": "Nazwa produktu"
+    },
+    "product_name_label": {
         "description": "Etykieta dla nazwy produktu",
         "message": "Nazwa produktu:"
     },
@@ -55,9 +91,21 @@
         "description": "Etykieta dla ceny produktu",
         "message": "Cena produktu:"
     },
+    "product_price_column": {
+        "description": "Nagłówek kolumny dla ceny produktu",
+        "message": "Cena produktu"
+    },
+    "product_price_label": {
+        "description": "Etykieta dla ceny produktu",
+        "message": "Cena produktu:"
+    },
     "product_saved": {
         "description": "Komunikat o powiadomieniu, gdy produkt zostanie zapisany",
         "message": "Produkt został zapisany"
+    },
+    "refresh_all_button": {
+        "description": "Tekst dla przycisku 'Odśwież wszystkie'",
+        "message": "Odśwież wszystkie"
     },
     "refresh_price": {
         "description": "Podpowiedź dla ikony odświeżania ceny",
@@ -67,9 +115,17 @@
         "description": "Prefiks dla wiadomości wskazującej, że otrzymano odpowiedź",
         "message": "Otrzymano odpowiedź:"
     },
+    "save_product_button": {
+        "description": "Tekst dla przycisku 'Zapisz produkt'",
+        "message": "Zapisz produkt"
+    },
     "track_price_action_triggered": {
         "description": "Komunikat o powiadomieniu, gdy zostanie uruchomiona akcja śledzenia ceny",
         "message": "Uruchomiono akcję śledzenia ceny"
+    },
+    "track_price_button": {
+        "description": "Tekst dla przycisku 'Śledź cenę'",
+        "message": "Śledź cenę"
     },
     "trackPrice_action": {
         "description": "Polecenie akcji do śledzenia ceny",

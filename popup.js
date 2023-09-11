@@ -1,6 +1,5 @@
 // @ts-nocheck
-console.log('popup.js loaded');
-
+console.log(chrome.i18n.getMessage('popup_js_loaded'));
 let currentProductDetails = null;
 
 document.getElementById('track-price').addEventListener('click', () => {
@@ -10,11 +9,16 @@ document.getElementById('track-price').addEventListener('click', () => {
             currentTab.id,
             { action: 'trackPrice' },
             response => {
-                console.log('Response received:', response);
+                console.log(
+                    `${chrome.i18n.getMessage('response_received')}:`,
+                    response
+                );
                 if (response) {
                     updatePopupUI(response);
                 } else {
-                    console.error('No data received in response');
+                    console.error(
+                        chrome.i18n.getMessage('no_data_in_response')
+                    );
                 }
             }
         );
@@ -31,21 +35,29 @@ function updatePopupUI(data) {
         document.getElementById('price-without-code');
 
     if (data && data.productName) {
-        productNameElement.textContent = `Nazwa produktu: ${data.productName}`;
+        productNameElement.textContent = `${chrome.i18n.getMessage(
+            'product_name'
+        )}: ${data.productName}`;
     }
 
     if (data && data.productPrice) {
-        productPriceElement.textContent = `Cena produktu: ${data.productPrice}`;
+        productPriceElement.textContent = `${chrome.i18n.getMessage(
+            'product_price'
+        )}: ${data.productPrice}`;
     }
 
     if (data && data.lowestPrice30Days) {
-        lowestPrice30DaysElement.textContent = `Najniższa cena z 30 dni przed obniżką: ${data.lowestPrice30Days}`;
+        lowestPrice30DaysElement.textContent = `${chrome.i18n.getMessage(
+            'lowest_price_in_30_days'
+        )}: ${data.lowestPrice30Days}`;
     } else {
         lowestPrice30DaysElement.textContent = '';
     }
 
     if (data && data.priceWithoutCode) {
-        priceWithoutCodeElement.textContent = `Cena bez kodu: ${data.priceWithoutCode}`;
+        priceWithoutCodeElement.textContent = `${chrome.i18n.getMessage(
+            'price_without_code'
+        )}: ${data.priceWithoutCode}`;
     } else {
         priceWithoutCodeElement.textContent = '';
     }
@@ -68,26 +80,24 @@ saveProductButton.addEventListener('click', () => {
                         currentProductDetails.productName
                 )
             ) {
-                alert('Wybrany produkt znajduje się już na liście');
+                alert(chrome.i18n.getMessage('product_already_on_list'));
                 return;
             }
 
             if (savedProducts.length >= 6) {
-                alert(
-                    'Możesz dodać maksymalnie 6 produktów. Usuń jakiś produkt, aby dodać nowy.'
-                );
+                alert(chrome.i18n.getMessage('max_six_products'));
                 return;
             }
 
             savedProducts.push(currentProductDetails);
 
             chrome.storage.local.set({ savedProducts }, () => {
-                console.log('Produkt został zapisany.');
+                console.log(chrome.i18n.getMessage('product_saved'));
                 addProductToTable(currentProductDetails);
             });
         });
     } else {
-        console.log('No product details available to save');
+        console.log(chrome.i18n.getMessage('product_saved'));
     }
 });
 
@@ -127,7 +137,7 @@ function addProductToTable(productData, index) {
 
     const deleteIcon = document.createElement('img');
     deleteIcon.classList.add('delete-icon');
-    deleteIcon.alt = 'Usuń produkt';
+    deleteIcon.alt = chrome.i18n.getMessage('delete_product');
     deleteIcon.style.cursor = 'pointer';
     deleteIcon.style.width = '16px';
     deleteIcon.src = getIconSrc('delete');
@@ -138,12 +148,15 @@ function addProductToTable(productData, index) {
 
     const refreshIcon = document.createElement('img');
     refreshIcon.classList.add('refresh-icon');
-    refreshIcon.alt = 'Odśwież cenę';
+    refreshIcon.alt = chrome.i18n.getMessage('refresh_price');
     refreshIcon.style.cursor = 'pointer';
     refreshIcon.style.width = '16px';
     refreshIcon.style.marginLeft = '10px'; // Add some margin between the icons
     refreshIcon.src = getIconSrc('refresh'); // Use the updated function to get the correct icon source
-    refreshIcon.addEventListener('click', () => refreshProductData(product));
+    refreshIcon.addEventListener('click', () => {
+        console.log(chrome.i18n.getMessage('refresh_icon_clicked'));
+        refreshProductData(productData);
+    });
     deleteCell.appendChild(refreshIcon); // Add the icon to the same cell as the delete icon
 }
 function getIconSrc(iconType) {
@@ -187,11 +200,16 @@ function fetchCurrentProductDetails() {
             currentTab.id,
             { action: 'trackPrice' },
             response => {
-                console.log('Response received:', response);
+                console.log(
+                    `${chrome.i18n.getMessage('response_received')}:`,
+                    response
+                );
                 if (response) {
                     updatePopupUI(response);
                 } else {
-                    console.error('No data received in response');
+                    console.error(
+                        chrome.i18n.getMessage('no_data_in_response')
+                    );
                 }
             }
         );
@@ -199,6 +217,11 @@ function fetchCurrentProductDetails() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    let objects = document.querySelectorAll('[data-i18n]');
+    objects.forEach(obj => {
+        let message = chrome.i18n.getMessage(obj.getAttribute('data-i18n'));
+        if (message) obj.textContent = message;
+    });
     loadSavedProducts();
 });
 
@@ -217,7 +240,7 @@ function removeProductFromTable(index) {
         savedProducts.splice(index - 1, 1);
 
         chrome.storage.local.set({ savedProducts }, () => {
-            console.log('Produkt został usunięty.');
+            console.log(chrome.i18n.getMessage('product_deleted'));
         });
     });
 
@@ -231,7 +254,7 @@ clearListButton.addEventListener('click', () => {
     );
     if (confirmation) {
         chrome.storage.local.set({ savedProducts: [] }, () => {
-            console.log('Wszystkie produkty zostały usunięte.');
+            console.log(chrome.i18n.getMessage('all_products_deleted'));
             const rows = savedProductsTable.getElementsByTagName('tr');
             while (rows.length > 1) {
                 savedProductsTable.deleteRow(1);
@@ -246,11 +269,55 @@ document.getElementById('dark-mode-switch').addEventListener('change', e => {
 });
 
 function refreshAllProducts() {
+    console.log(chrome.i18n.getMessage('refresh_all_products_called'));
     const productRows = document.querySelectorAll(
         '#saved-products-table tbody tr'
     );
-    productRows.forEach((row, index) => {});
+    productRows.forEach((row, index) => {
+        console.log(
+            chrome.i18n.getMessage('refreshing_product_at_index', [
+                index.toString(),
+            ])
+        ); // Używamy zastępowania parametrów
+    });
 }
 document
     .getElementById('refresh-all')
     .addEventListener('click', refreshAllProducts);
+
+function refreshProductData(productData) {
+    console.log(
+        `${chrome.i18n.getMessage('refreshing_product')}: ${
+            productData.productName
+        }`
+    );
+
+    // Otwórz nową kartę z URL produktu, aby pobrać najnowsze dane
+    chrome.tabs.create({ url: productData.productURL }, tab => {
+        // Po otwarciu karty zaczekaj chwilę, aby strona się załadowała, a następnie wysyłaj wiadomość do content script
+        setTimeout(() => {
+            chrome.tabs.sendMessage(
+                tab.id,
+                { action: 'trackPrice' },
+                response => {
+                    if (response) {
+                        console.log(
+                            `${chrome.i18n.getMessage('new_data_retrieved')}:`,
+                            response
+                        );
+
+                        // Aktualizuj dane produktu w pamięci lokalnej i w UI
+                        updateProductData(productData, response);
+
+                        // Zamknij kartę po zakończeniu
+                        chrome.tabs.remove(tab.id);
+                    } else {
+                        console.error(
+                            chrome.i18n.getMessage('failed_to_retrieve_data')
+                        );
+                    }
+                }
+            );
+        }, 3000); // Ustalony czas oczekiwania - możesz go dostosować
+    });
+}

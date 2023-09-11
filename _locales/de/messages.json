@@ -1,7 +1,15 @@
 {
+    "actions_column": {
+        "description": "Spaltenüberschrift für Aktionen",
+        "message": "Aktionen"
+    },
     "all_products_deleted": {
         "description": "Benachrichtigungsnachricht, wenn alle Produkte gelöscht werden",
         "message": "Alle Produkte wurden gelöscht"
+    },
+    "clear_list_button": {
+        "description": "Text für die Schaltfläche 'Liste löschen'",
+        "message": "Liste löschen"
     },
     "confirm_delete_all_products": {
         "description": "Bestätigungsnachricht zum Löschen aller Produkte",
@@ -10,6 +18,14 @@
     "delete_product": {
         "description": "Tooltip für das Löschen des Produkt-Symbols",
         "message": "Produkt löschen"
+    },
+    "lowest_price_30_days_column": {
+        "description": "Spaltenüberschrift für den niedrigsten Preis der letzten 30 Tage",
+        "message": "Niedrigster Preis (30 Tage)"
+    },
+    "lowest_price_30_days_label": {
+        "description": "Bezeichnung für den niedrigsten Preis der letzten 30 Tage",
+        "message": "Niedrigster Preis in 30 Tagen:"
     },
     "lowest_price_in_30_days": {
         "description": "Etikett für den niedrigsten Preis in den letzten 30 Tagen",
@@ -35,6 +51,14 @@
         "description": "Etikett für den Preis ohne Rabattcode",
         "message": "Preis ohne Code:"
     },
+    "price_without_code_column": {
+        "description": "Spaltenüberschrift für den Preis ohne Rabattcode",
+        "message": "Preis ohne Code"
+    },
+    "price_without_code_label": {
+        "description": "Bezeichnung für den Preis ohne Rabattcode",
+        "message": "Preis ohne Code:"
+    },
     "product_already_on_list": {
         "description": "Fehlermeldung, wenn das Produkt bereits auf der Liste steht",
         "message": "Das ausgewählte Produkt befindet sich bereits auf der Liste"
@@ -47,17 +71,41 @@
         "description": "Etikett für Produktdetails",
         "message": "Produktdetails:"
     },
+    "product_link_column": {
+        "description": "Spaltenüberschrift für den Produktlink",
+        "message": "Produktlink"
+    },
     "product_name": {
         "description": "Etikett für den Produktnamen",
+        "message": "Produktname:"
+    },
+    "product_name_column": {
+        "description": "Spaltenüberschrift für den Produktnamen",
+        "message": "Produktname"
+    },
+    "product_name_label": {
+        "description": "Bezeichnung für den Produktnamen",
         "message": "Produktname:"
     },
     "product_price": {
         "description": "Etikett für den Produktpreis",
         "message": "Produktpreis:"
     },
+    "product_price_column": {
+        "description": "Spaltenüberschrift für den Produktpreis",
+        "message": "Produktpreis"
+    },
+    "product_price_label": {
+        "description": "Bezeichnung für den Produktpreis",
+        "message": "Produktpreis:"
+    },
     "product_saved": {
         "description": "Benachrichtigungsnachricht, wenn ein Produkt gespeichert wird",
         "message": "Produkt wurde gespeichert"
+    },
+    "refresh_all_button": {
+        "description": "Text für die Schaltfläche 'Alle aktualisieren'",
+        "message": "Alle aktualisieren"
     },
     "refresh_price": {
         "description": "Tooltip für das Aktualisieren des Preis-Symbols",
@@ -67,9 +115,17 @@
         "description": "Präfix für die Nachricht, dass eine Antwort erhalten wurde",
         "message": "Antwort erhalten:"
     },
+    "save_product_button": {
+        "description": "Text für die Schaltfläche 'Produkt speichern'",
+        "message": "Produkt speichern"
+    },
     "track_price_action_triggered": {
         "description": "Benachrichtigungsnachricht, wenn die Aktion zur Preisverfolgung ausgelöst wird",
         "message": "Aktion zur Preisverfolgung ausgelöst"
+    },
+    "track_price_button": {
+        "description": "Text für die Schaltfläche 'Preis verfolgen'",
+        "message": "Preis verfolgen"
     },
     "trackPrice_action": {
         "description": "Aktionsbefehl zur Preisverfolgung",

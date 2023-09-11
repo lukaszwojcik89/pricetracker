@@ -1,7 +1,15 @@
 {
+    "actions_column": {
+        "description": "Заголовок стовпця для дій",
+        "message": "Дії"
+    },
     "all_products_deleted": {
         "description": "Повідомлення про сповіщення, коли всі продукти видалені",
         "message": "Всі продукти були видалені"
+    },
+    "clear_list_button": {
+        "description": "Текст для кнопки 'Очистити список'",
+        "message": "Очистити список"
     },
     "confirm_delete_all_products": {
         "description": "Повідомлення для підтвердження видалення всіх продуктів",
@@ -10,6 +18,14 @@
     "delete_product": {
         "description": "Підказка для значка видалення продукту",
         "message": "Видалити продукт"
+    },
+    "lowest_price_30_days_column": {
+        "description": "Заголовок стовпця для найнижчої ціни за останні 30 днів",
+        "message": "Найнижча ціна (30 днів)"
+    },
+    "lowest_price_30_days_label": {
+        "description": "Назва для найнижчої ціни за останні 30 днів",
+        "message": "Найнижча ціна за 30 днів:"
     },
     "lowest_price_in_30_days": {
         "description": "Мітка для найнижчої ціни за останні 30 днів",
@@ -35,6 +51,14 @@
         "description": "Мітка для ціни без дисконтного коду",
         "message": "Ціна без коду:"
     },
+    "price_without_code_column": {
+        "description": "Заголовок стовпця для ціни без дисконтного коду",
+        "message": "Ціна без коду"
+    },
+    "price_without_code_label": {
+        "description": "Назва для ціни без дисконтного коду",
+        "message": "Ціна без коду:"
+    },
     "product_already_on_list": {
         "description": "Повідомлення про помилку, коли продукт вже є на списку",
         "message": "Обраний продукт вже є на списку"
@@ -47,17 +71,41 @@
         "description": "Мітка для деталей продукту",
         "message": "Деталі продукту:"
     },
+    "product_link_column": {
+        "description": "Заголовок стовпця для посилання на продукт",
+        "message": "Посилання на продукт"
+    },
     "product_name": {
         "description": "Мітка для назви продукту",
+        "message": "Назва продукту:"
+    },
+    "product_name_column": {
+        "description": "Заголовок стовпця для назви продукту",
+        "message": "Назва продукту"
+    },
+    "product_name_label": {
+        "description": "Назва для назви продукту",
         "message": "Назва продукту:"
     },
     "product_price": {
         "description": "Мітка для ціни продукту",
         "message": "Ціна продукту:"
     },
+    "product_price_column": {
+        "description": "Заголовок стовпця для ціни продукту",
+        "message": "Ціна продукту"
+    },
+    "product_price_label": {
+        "description": "Назва для ціни продукту",
+        "message": "Ціна продукту:"
+    },
     "product_saved": {
         "description": "Повідомлення про сповіщення, коли продукт збережено",
         "message": "Продукт збережено"
+    },
+    "refresh_all_button": {
+        "description": "Текст для кнопки 'Оновити всі'",
+        "message": "Оновити всі"
     },
     "refresh_price": {
         "description": "Підказка для значка оновлення ціни",
@@ -67,9 +115,17 @@
         "description": "Префікс для повідомлення, що вказує, що отримано відповідь",
         "message": "Отримано відповідь:"
     },
+    "save_product_button": {
+        "description": "Текст для кнопки 'Зберегти продукт'",
+        "message": "Зберегти продукт"
+    },
     "track_price_action_triggered": {
         "description": "Повідомлення про сповіщення, коли запущено дію відстеження ціни",
         "message": "Запущено дію відстеження ціни"
+    },
+    "track_price_button": {
+        "description": "Текст для кнопки 'Відстежувати ціну'",
+        "message": "Відстежувати ціну"
     },
     "trackPrice_action": {
         "description": "Команда дії для відстеження ціни",

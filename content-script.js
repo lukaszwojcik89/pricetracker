@@ -45,9 +45,9 @@ function getProductDetails() {
 
 chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
     if (request.action === 'trackPrice') {
-        console.log('Track price action triggered');
+        console.log(chrome.i18n.getMessage('track_price_action_triggered'));
         const details = getProductDetails();
-        console.log('Product Details:', details);
+        console.log(`${chrome.i18n.getMessage('product_details')}:`, details);
         sendResponse({
             productName: details.productName,
             productPrice: details.productPrice,

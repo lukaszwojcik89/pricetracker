@@ -1,4 +1,18 @@
 {
+    "_locales": {
+        "de": {
+            "message": "messages.json"
+        },
+        "en": {
+            "message": "messages.json"
+        },
+        "pl": {
+            "message": "messages.json"
+        },
+        "uk": {
+            "message": "messages.json"
+        }
+    },
     "action": {
         "default_icon": {
             "128": "images/icon_128dp.png",
@@ -20,6 +34,7 @@
             ]
         }
     ],
+    "default_locale": "en",
     "description": "Tracks price changes on euro.com.pl",
     "icons": {
         "128": "images/icon_128dp.png",

@@ -1,7 +1,15 @@
 {
+    "actions_column": {
+        "description": "Column header for actions",
+        "message": "Akcje"
+    },
     "all_products_deleted": {
         "description": "Notification message when all products are deleted",
         "message": "All products have been deleted"
+    },
+    "clear_list_button": {
+        "description": "Text for the 'Clear List' button",
+        "message": "Wyczyść listę"
     },
     "confirm_delete_all_products": {
         "description": "Confirmation message to delete all products",
@@ -10,6 +18,14 @@
     "delete_product": {
         "description": "Tooltip for delete product icon",
         "message": "Delete product"
+    },
+    "lowest_price_30_days_column": {
+        "description": "Column header for the lowest price in the last 30 days",
+        "message": "Najniższa cena (30 dni)"
+    },
+    "lowest_price_30_days_label": {
+        "description": "Label for the lowest price in the last 30 days",
+        "message": "Najniższa cena z 30 dni przed obniżką:"
     },
     "lowest_price_in_30_days": {
         "description": "Label for the lowest price in the last 30 days",
@@ -35,6 +51,14 @@
         "description": "Label for the price without a discount code",
         "message": "Price without code:"
     },
+    "price_without_code_column": {
+        "description": "Column header for the price without a discount code",
+        "message": "Cena bez kodu"
+    },
+    "price_without_code_label": {
+        "description": "Label for the price without a discount code",
+        "message": "Cena bez kodu:"
+    },
     "product_already_on_list": {
         "description": "Error message when the product is already on the list",
         "message": "The selected product is already on the list"
@@ -47,17 +71,41 @@
         "description": "Label for product details",
         "message": "Product details:"
     },
+    "product_link_column": {
+        "description": "Column header for product link",
+        "message": "Link do produktu"
+    },
     "product_name": {
         "description": "Label for product name",
         "message": "Product name:"
+    },
+    "product_name_column": {
+        "description": "Column header for product name",
+        "message": "Nazwa produktu"
+    },
+    "product_name_label": {
+        "description": "Label for product name",
+        "message": "Nazwa produktu:"
     },
     "product_price": {
         "description": "Label for product price",
         "message": "Product price:"
     },
+    "product_price_column": {
+        "description": "Column header for product price",
+        "message": "Cena produktu"
+    },
+    "product_price_label": {
+        "description": "Label for product price",
+        "message": "Cena produktu:"
+    },
     "product_saved": {
         "description": "Notification message when a product is saved",
         "message": "Product has been saved"
+    },
+    "refresh_all_button": {
+        "description": "Text for the 'Refresh All' button",
+        "message": "Odśwież wszystkie"
     },
     "refresh_price": {
         "description": "Tooltip for refresh price icon",
@@ -67,9 +115,17 @@
         "description": "Prefix for the message indicating a response was received",
         "message": "Response received:"
     },
+    "save_product_button": {
+        "description": "Text for the 'Save Product' button",
+        "message": "Zapisz produkt"
+    },
     "track_price_action_triggered": {
         "description": "Notification message when the track price action is triggered",
         "message": "Track price action triggered"
+    },
+    "track_price_button": {
+        "description": "Text for the 'Track Price' button",
+        "message": "Śledź cenę"
     },
     "trackPrice_action": {
         "description": "Action command for tracking the price",
